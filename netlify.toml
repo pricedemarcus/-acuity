@@ -1,0 +1,29 @@
+[build]
+  publish = "."
+
+[functions]
+  node_bundler = "esbuild"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[[redirects]]
+  from = "/api/tutor"
+  to = "/.netlify/functions/tutor"
+  status = 200
+
+[[redirects]]
+  from = "/api/tts"
+  to = "/.netlify/functions/tts"
+  status = 200
+
+[[redirects]]
+  from = "/api/interview"
+  to = "/.netlify/functions/interview"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"

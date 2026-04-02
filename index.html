@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ACUITY — From Candidate to Physician</title>
+  <meta name="description" content="AI-powered MCAT prep and medical school interview simulation. The edge between aspiring and accepted." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo">
+        <span class="nav__logo-mark">◈</span>
+        ACUITY
+      </a>
+      <div class="nav__links">
+        <a href="#features">Features</a>
+        <a href="#interview">Interview Sim</a>
+        <a href="#pricing">Pricing</a>
+      </div>
+      <a href="app.html" class="btn btn--sm">Start Free</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__bg">
+      <div class="hero__grid"></div>
+      <div class="hero__glow hero__glow--1"></div>
+      <div class="hero__glow hero__glow--2"></div>
+    </div>
+    <div class="hero__inner">
+      <div class="hero__badge">
+        <span class="hero__badge-dot"></span>
+        Now with AI Interview Simulation
+      </div>
+      <h1 class="hero__headline">
+        The edge between<br />
+        <em>aspiring</em> and accepted.
+      </h1>
+      <p class="hero__sub">ACUITY combines adaptive MCAT preparation with real-time AI interview coaching — the only platform that addresses both reasons medical school applicants don't get in.</p>
+      <div class="hero__actions">
+        <a href="app.html" class="btn btn--primary btn--lg">Begin Your Preparation</a>
+        <a href="#interview" class="btn btn--ghost btn--lg">See Interview Sim →</a>
+      </div>
+      <div class="hero__stats">
+        <div class="hero__stat">
+          <span class="hero__stat-num">528</span>
+          <span class="hero__stat-label">Perfect MCAT Score</span>
+        </div>
+        <div class="hero__stat-div"></div>
+        <div class="hero__stat">
+          <span class="hero__stat-num">4.7%</span>
+          <span class="hero__stat-label">Avg. MD Acceptance Rate</span>
+        </div>
+        <div class="hero__stat-div"></div>
+        <div class="hero__stat">
+          <span class="hero__stat-num">3×</span>
+          <span class="hero__stat-label">Interview Success Rate</span>
+        </div>
+      </div>
+    </div>
+    <!-- Score dial visualization -->
+    <div class="hero__dial-wrap">
+      <div class="hero__dial">
+        <svg class="dial-svg" viewBox="0 0 280 280">
+          <circle cx="140" cy="140" r="120" fill="none" stroke="rgba(79,142,247,0.08)" stroke-width="1"/>
+          <circle cx="140" cy="140" r="100" fill="none" stroke="rgba(79,142,247,0.05)" stroke-width="1"/>
+          <!-- Track -->
+          <path class="dial-track" d="M 40 200 A 110 110 0 1 1 240 200" fill="none" stroke="rgba(79,142,247,0.12)" stroke-width="8" stroke-linecap="round"/>
+          <!-- Progress -->
+          <path class="dial-progress" d="M 40 200 A 110 110 0 1 1 240 200" fill="none" stroke="url(#dialGrad)" stroke-width="8" stroke-linecap="round" stroke-dasharray="346" stroke-dashoffset="100"/>
+          <defs>
+            <linearGradient id="dialGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#4F8EF7"/>
+              <stop offset="100%" stop-color="#7BB3FF"/>
+            </linearGradient>
+          </defs>
+          <!-- Markers -->
+          <text x="30" y="215" class="dial-label">472</text>
+          <text x="232" y="215" class="dial-label">528</text>
+        </svg>
+        <div class="dial-center">
+          <div class="dial-score" id="dialScore">514</div>
+          <div class="dial-sublabel">Your Target</div>
+        </div>
+        <div class="dial-range">
+          <span>National Avg: 511</span>
+          <span>Matriculant Avg: 514</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM SECTION -->
+  <section class="problem" id="features">
+    <div class="container">
+      <div class="section-label">The Reality</div>
+      <h2 class="section-h2">Two reasons applicants don't get in. <em>We solve both.</em></h2>
+      <div class="problem__grid">
+        <div class="problem__card problem__card--mcat">
+          <div class="problem__card-num">01</div>
+          <div class="problem__card-icon">◎</div>
+          <h3>The MCAT Gap</h3>
+          <p>A 3-point MCAT increase doubles your acceptance odds. Most prep tools give you content. ACUITY gives you adaptive, AI-driven targeting of exactly where your score is leaking.</p>
+          <ul class="problem__list">
+            <li>◈ Adaptive question difficulty</li>
+            <li>◈ AI identifies weak subsections</li>
+            <li>◈ CARS-specific reasoning training</li>
+            <li>◈ Passage-based practice with AI explanations</li>
+          </ul>
+        </div>
+        <div class="problem__card problem__card--interview">
+          <div class="problem__card-num">02</div>
+          <div class="problem__card-icon">◉</div>
+          <h3>The Interview Gap</h3>
+          <p>Getting an interview and failing it is heartbreaking — and almost nobody talks about it. Panel, MMI, virtual — each format requires a different skill set that only comes from practice.</p>
+          <ul class="problem__list">
+            <li>◈ Live AI interviewer, not scripts</li>
+            <li>◈ MMI station simulation</li>
+            <li>◈ Real-time answer feedback</li>
+            <li>◈ School-specific question banks</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERVIEW SIM SHOWCASE -->
+  <section class="interview-showcase" id="interview">
+    <div class="container">
+      <div class="section-label">The Differentiator</div>
+      <h2 class="section-h2">A mock interview that <em>actually feels real.</em></h2>
+      <p class="section-sub">Most applicants practice in front of a mirror. ACUITY puts you across from an AI interviewer that responds to your specific answers, challenges your reasoning, and gives you structured feedback after every session.</p>
+    </div>
+
+    <div class="sim-preview">
+      <div class="sim-ui">
+        <!-- Interviewer panel -->
+        <div class="sim-panel sim-panel--interviewer">
+          <div class="sim-panel__header">
+            <span class="sim-status-dot sim-status-dot--active"></span>
+            AI Interviewer · MMI Station 3
+          </div>
+          <div class="sim-avatar">
+            <div class="sim-avatar__ring"></div>
+            <div class="sim-avatar__inner">
+              <span>DR</span>
+            </div>
+            <div class="sim-avatar__wave">
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+          <div class="sim-question">
+            <div class="sim-question__label">Current Question</div>
+            <p>"A patient refuses a blood transfusion on religious grounds, but without it they will likely die. How do you approach this situation?"</p>
+          </div>
+          <div class="sim-timer">
+            <div class="sim-timer__bar">
+              <div class="sim-timer__fill" style="width: 62%"></div>
+            </div>
+            <span>1:52 remaining</span>
+          </div>
+        </div>
+
+        <!-- Candidate panel -->
+        <div class="sim-panel sim-panel--candidate">
+          <div class="sim-panel__header">
+            <span class="sim-status-dot sim-status-dot--recording"></span>
+            Your Response · Recording
+          </div>
+          <div class="sim-transcript">
+            <p>"I would first ensure the patient fully understands the medical implications of refusing the transfusion — confirming their decision-making capacity and that the refusal is informed..."</p>
+            <span class="sim-cursor"></span>
+          </div>
+          <div class="sim-feedback-live">
+            <div class="sim-feedback-item sim-feedback-item--good">
+              <span>◈</span> Strong opening — addressing patient autonomy
+            </div>
+            <div class="sim-feedback-item sim-feedback-item--tip">
+              <span>△</span> Consider mentioning ethics consultation
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- After session feedback -->
+      <div class="sim-report">
+        <div class="sim-report__header">Session Complete — Station 3 of 6</div>
+        <div class="sim-scores">
+          <div class="sim-score-item">
+            <div class="sim-score-label">Medical Ethics</div>
+            <div class="sim-score-bar"><div class="sim-score-fill" style="width:84%"></div></div>
+            <div class="sim-score-val">84</div>
+          </div>
+          <div class="sim-score-item">
+            <div class="sim-score-label">Communication</div>
+            <div class="sim-score-bar"><div class="sim-score-fill" style="width:71%"></div></div>
+            <div class="sim-score-val">71</div>
+          </div>
+          <div class="sim-score-item">
+            <div class="sim-score-label">Structure (STAR)</div>
+            <div class="sim-score-bar"><div class="sim-score-fill" style="width:90%"></div></div>
+            <div class="sim-score-val">90</div>
+          </div>
+          <div class="sim-score-item">
+            <div class="sim-score-label">Confidence</div>
+            <div class="sim-score-bar"><div class="sim-score-fill" style="width:65%"></div></div>
+            <div class="sim-score-val">65</div>
+          </div>
+        </div>
+        <div class="sim-report__note">"Strong ethical framework. Work on projecting confidence — filler words detected 4 times. Next: practice Station 4 — Collaboration Under Pressure."</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MCAT FEATURES -->
+  <section class="mcat-section">
+    <div class="container">
+      <div class="section-label">MCAT Preparation</div>
+      <h2 class="section-h2">Every section. Every subsection. <em>Every weakness found.</em></h2>
+      <div class="mcat-grid">
+        <div class="mcat-subject mcat-subject--bb">
+          <div class="mcat-subject__score">132</div>
+          <div class="mcat-subject__name">Bio/Biochem</div>
+          <div class="mcat-subject__abbr">B/B</div>
+        </div>
+        <div class="mcat-subject mcat-subject--cp">
+          <div class="mcat-subject__score">131</div>
+          <div class="mcat-subject__name">Chem/Physics</div>
+          <div class="mcat-subject__abbr">C/P</div>
+        </div>
+        <div class="mcat-subject mcat-subject--cars">
+          <div class="mcat-subject__score">130</div>
+          <div class="mcat-subject__name">CARS</div>
+          <div class="mcat-subject__abbr">CARS</div>
+        </div>
+        <div class="mcat-subject mcat-subject--ps">
+          <div class="mcat-subject__score">133</div>
+          <div class="mcat-subject__name">Psych/Sociology</div>
+          <div class="mcat-subject__abbr">P/S</div>
+        </div>
+      </div>
+      <div class="mcat-features">
+        <div class="mcat-feature">
+          <div class="mcat-feature__icon">◎</div>
+          <h4>Adaptive Flashcards</h4>
+          <p>SM-2 spaced repetition with AI explanations. Knows your weak topics before you do.</p>
+        </div>
+        <div class="mcat-feature">
+          <div class="mcat-feature__icon">◈</div>
+          <h4>Practice Passages</h4>
+          <p>Full-length AAMC-style passages with AI-powered answer explanations and rationales.</p>
+        </div>
+        <div class="mcat-feature">
+          <div class="mcat-feature__icon">△</div>
+          <h4>AI Tutor</h4>
+          <p>Ask anything. Get explanations calibrated to your level. Never study confused again.</p>
+        </div>
+        <div class="mcat-feature">
+          <div class="mcat-feature__icon">◆</div>
+          <h4>Score Prediction</h4>
+          <p>Real-time score estimates based on your performance across all four sections.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <div class="section-label">Pricing</div>
+      <h2 class="section-h2">Less than one hour of <em>private tutoring.</em></h2>
+      <div class="pricing__grid">
+        <div class="pricing__card">
+          <div class="pricing__tier">Free</div>
+          <div class="pricing__price">$0<span>/mo</span></div>
+          <div class="pricing__desc">Start your preparation today.</div>
+          <ul class="pricing__features">
+            <li>◈ 50 MCAT flashcards</li>
+            <li>◈ 5 practice passages</li>
+            <li>◈ 3 mock interview sessions/mo</li>
+            <li>◈ Basic performance tracking</li>
+            <li>◈ AI Tutor (10 questions/day)</li>
+          </ul>
+          <a href="app.html" class="btn btn--outline btn--full">Get Started Free</a>
+        </div>
+        <div class="pricing__card pricing__card--pro">
+          <div class="pricing__badge">Most Popular</div>
+          <div class="pricing__tier">Pro</div>
+          <div class="pricing__price">$29<span>/mo</span></div>
+          <div class="pricing__desc">Everything you need to get accepted.</div>
+          <ul class="pricing__features">
+            <li>◈ 2,000+ MCAT flashcards (all sections)</li>
+            <li>◈ Unlimited practice passages</li>
+            <li>◈ Unlimited mock interviews</li>
+            <li>◈ MMI + Panel + Virtual formats</li>
+            <li>◈ Unlimited AI Tutor</li>
+            <li>◈ Score prediction & roadmap</li>
+            <li>◈ School-specific interview prep</li>
+            <li>◈ Personal statement review</li>
+          </ul>
+          <a href="app.html" class="btn btn--primary btn--full">Start 7-Day Free Trial</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <span class="nav__logo-mark">◈</span>
+          <span>ACUITY</span>
+        </div>
+        <p class="footer__tagline">From Candidate to Physician.</p>
+        <div class="footer__links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Contact</a>
+        </div>
+        <p class="footer__copy">© 2026 ACUITY. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

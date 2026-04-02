@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>ACUITY</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="app.css?v=3" />
+</head>
+<body>
+
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <div class="topbar__left">
+      <button class="back-btn" id="backBtn" style="display:none">← Back</button>
+      <div class="topbar__logo" id="topbarLogo">
+        <span class="logo-mark">◈</span> ACUITY
+      </div>
+    </div>
+    <div class="topbar__right">
+      <button class="theme-toggle" id="themeToggle" title="Toggle theme">☀</button>
+      <div class="topbar__score" id="topbarScore" style="display:none">
+        <span class="topbar__score-label">Target</span>
+        <span class="topbar__score-val" id="topbarScoreVal">514</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- SCREENS -->
+
+  <!-- AUTH -->
+  <div class="screen active" id="screen-auth">
+    <div class="auth-wrap">
+      <div class="auth-brand">
+        <span class="logo-mark large">◈</span>
+        <h1 class="auth-title">ACUITY</h1>
+        <p class="auth-sub">From Candidate to Physician.</p>
+      </div>
+      <div class="auth-card" id="authCard">
+        <div class="auth-tabs">
+          <button class="auth-tab active" data-tab="signin">Sign In</button>
+          <button class="auth-tab" data-tab="signup">Create Account</button>
+        </div>
+        <div id="authSignin">
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" class="form-input" placeholder="your@email.com" id="signinEmail" />
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-input" placeholder="••••••••" id="signinPass" />
+          </div>
+          <button class="btn btn--primary btn--full" id="signinBtn">Sign In</button>
+        </div>
+        <div id="authSignup" style="display:none">
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" class="form-input" placeholder="Dr. Future" id="signupName" />
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" class="form-input" placeholder="your@email.com" id="signupEmail" />
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-input" placeholder="••••••••" id="signupPass" />
+          </div>
+          <button class="btn btn--primary btn--full" id="signupBtn">Create Account</button>
+        </div>
+        <button class="auth-demo-btn" id="demoBtn">Continue as Guest →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOME / DASHBOARD -->
+  <div class="screen" id="screen-home">
+    <div class="home-wrap">
+      <div class="home-greeting" id="homeGreeting">Good morning, Doctor.</div>
+      <div class="home-sub">Your preparation summary</div>
+
+      <!-- Score Target -->
+      <div class="score-hero">
+        <div class="score-hero__dial">
+          <svg viewBox="0 0 180 180" width="180" height="180">
+            <path d="M 24 130 A 80 80 0 1 1 156 130" fill="none" stroke="rgba(79,142,247,0.1)" stroke-width="8" stroke-linecap="round"/>
+            <path id="scoreArc" d="M 24 130 A 80 80 0 1 1 156 130" fill="none" stroke="url(#arcGrad)" stroke-width="8" stroke-linecap="round" stroke-dasharray="251" stroke-dashoffset="80"/>
+            <defs>
+              <linearGradient id="arcGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#4F8EF7"/>
+                <stop offset="100%" stop-color="#7BB3FF"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <div class="score-hero__center">
+            <div class="score-hero__num" id="homeScore">514</div>
+            <div class="score-hero__label">Target</div>
+          </div>
+        </div>
+        <div class="score-hero__breakdown">
+          <div class="score-section">
+            <span class="score-section__abbr score-section__abbr--bb">B/B</span>
+            <span class="score-section__val">128</span>
+            <div class="score-section__bar"><div style="width:75%"></div></div>
+          </div>
+          <div class="score-section">
+            <span class="score-section__abbr score-section__abbr--cp">C/P</span>
+            <span class="score-section__val">127</span>
+            <div class="score-section__bar"><div style="width:68%"></div></div>
+          </div>
+          <div class="score-section">
+            <span class="score-section__abbr score-section__abbr--cars">CARS</span>
+            <span class="score-section__val">129</span>
+            <div class="score-section__bar"><div style="width:82%"></div></div>
+          </div>
+          <div class="score-section">
+            <span class="score-section__abbr score-section__abbr--ps">P/S</span>
+            <span class="score-section__val">130</span>
+            <div class="score-section__bar"><div style="width:88%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="quick-actions">
+        <button class="quick-action" data-screen="mcat">
+          <div class="quick-action__icon">◎</div>
+          <div class="quick-action__label">MCAT Study</div>
+          <div class="quick-action__sub">4 sections</div>
+        </button>
+        <button class="quick-action quick-action--featured" data-screen="interview-hub">
+          <div class="quick-action__badge">New</div>
+          <div class="quick-action__icon">◉</div>
+          <div class="quick-action__label">Interview Sim</div>
+          <div class="quick-action__sub">AI powered</div>
+        </button>
+        <button class="quick-action" data-screen="tutor">
+          <div class="quick-action__icon">△</div>
+          <div class="quick-action__label">AI Tutor</div>
+          <div class="quick-action__sub">Ask anything</div>
+        </button>
+      </div>
+
+      <!-- Stats row -->
+      <div class="stat-row">
+        <div class="stat-tile">
+          <div class="stat-tile__val" id="statStreak">7</div>
+          <div class="stat-tile__label">Day Streak</div>
+        </div>
+        <div class="stat-tile">
+          <div class="stat-tile__val" id="statCards">284</div>
+          <div class="stat-tile__label">Cards Studied</div>
+        </div>
+        <div class="stat-tile">
+          <div class="stat-tile__val" id="statInterviews">12</div>
+          <div class="stat-tile__label">Interviews</div>
+        </div>
+        <div class="stat-tile">
+          <div class="stat-tile__val" id="statAccuracy">74%</div>
+          <div class="stat-tile__label">Accuracy</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MCAT HUB -->
+  <div class="screen" id="screen-mcat">
+    <div class="screen-wrap">
+      <div class="screen-header">
+        <h2 class="screen-title">MCAT Preparation</h2>
+        <p class="screen-sub">Select a section to study</p>
+      </div>
+      <div class="subject-grid">
+        <button class="subject-card subject-card--bb" data-subject="bb">
+          <div class="subject-card__abbr">B/B</div>
+          <div class="subject-card__name">Biological &amp; Biochemical Foundations</div>
+          <div class="subject-card__meta">Biology · Biochemistry · Organic Chemistry</div>
+          <div class="subject-card__score">128 / 132</div>
+          <div class="subject-card__arrow">→</div>
+        </button>
+        <button class="subject-card subject-card--cp" data-subject="cp">
+          <div class="subject-card__abbr">C/P</div>
+          <div class="subject-card__name">Chemical &amp; Physical Foundations</div>
+          <div class="subject-card__meta">General Chemistry · Physics · Biochemistry</div>
+          <div class="subject-card__score">127 / 132</div>
+          <div class="subject-card__arrow">→</div>
+        </button>
+        <button class="subject-card subject-card--cars" data-subject="cars">
+          <div class="subject-card__abbr">CARS</div>
+          <div class="subject-card__name">Critical Analysis &amp; Reasoning Skills</div>
+          <div class="subject-card__meta">Comprehension · Reasoning · Analysis</div>
+          <div class="subject-card__score">129 / 132</div>
+          <div class="subject-card__arrow">→</div>
+        </button>
+        <button class="subject-card subject-card--ps" data-subject="ps">
+          <div class="subject-card__abbr">P/S</div>
+          <div class="subject-card__name">Psychological, Social &amp; Biological Foundations</div>
+          <div class="subject-card__meta">Psychology · Sociology · Biology</div>
+          <div class="subject-card__score">130 / 132</div>
+          <div class="subject-card__arrow">→</div>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- INTERVIEW HUB -->
+  <div class="screen" id="screen-interview-hub">
+    <div class="screen-wrap">
+      <div class="screen-header">
+        <h2 class="screen-title">Interview Simulation</h2>
+        <p class="screen-sub">Practice with an AI interviewer that responds to your actual answers</p>
+      </div>
+
+      <div class="interview-modes">
+        <button class="interview-mode-card interview-mode-card--mmi" data-mode="mmi">
+          <div class="interview-mode-card__icon">◎</div>
+          <div class="interview-mode-card__title">MMI Simulation</div>
+          <div class="interview-mode-card__desc">Multiple Mini Interview — 6 stations, 8 minutes each. Ethics, collaboration, communication, critical thinking.</div>
+          <div class="interview-mode-card__meta">
+            <span>6 Stations</span>
+            <span>8 min each</span>
+            <span>Most common format</span>
+          </div>
+          <div class="interview-mode-card__cta">Start MMI →</div>
+        </button>
+
+        <button class="interview-mode-card interview-mode-card--panel" data-mode="panel">
+          <div class="interview-mode-card__icon">◈</div>
+          <div class="interview-mode-card__title">Panel Interview</div>
+          <div class="interview-mode-card__desc">Traditional panel format — 2–3 interviewers, 30–45 minutes. Behavioral + situational questions.</div>
+          <div class="interview-mode-card__meta">
+            <span>30–45 min</span>
+            <span>2–3 interviewers</span>
+            <span>STAR method</span>
+          </div>
+          <div class="interview-mode-card__cta">Start Panel →</div>
+        </button>
+
+        <button class="interview-mode-card interview-mode-card--virtual" data-mode="virtual">
+          <div class="interview-mode-card__icon">◆</div>
+          <div class="interview-mode-card__title">Virtual Interview</div>
+          <div class="interview-mode-card__desc">One-way video interview — pre-recorded questions, timed responses. Increasingly common post-COVID.</div>
+          <div class="interview-mode-card__meta">
+            <span>Timed responses</span>
+            <span>No follow-ups</span>
+            <span>Camera practice</span>
+          </div>
+          <div class="interview-mode-card__cta">Start Virtual →</div>
+        </button>
+
+        <button class="interview-mode-card interview-mode-card--phone" data-mode="phone">
+          <div class="interview-mode-card__icon">△</div>
+          <div class="interview-mode-card__title">Phone Screen</div>
+          <div class="interview-mode-card__desc">Voice-only interview — first-round screening with admissions coordinator or faculty.</div>
+          <div class="interview-mode-card__meta">
+            <span>Voice only</span>
+            <span>15–20 min</span>
+            <span>First round</span>
+          </div>
+          <div class="interview-mode-card__cta">Start Phone →</div>
+        </button>
+      </div>
+
+      <div class="interview-recent">
+        <div class="interview-recent__header">Recent Sessions</div>
+        <div class="interview-session-row">
+          <div class="interview-session-dot"></div>
+          <div class="interview-session-info">
+            <div class="interview-session-type">MMI — Station 3 of 6</div>
+            <div class="interview-session-date">Today · 45 min ago</div>
+          </div>
+          <div class="interview-session-score">78</div>
+        </div>
+        <div class="interview-session-row">
+          <div class="interview-session-dot"></div>
+          <div class="interview-session-info">
+            <div class="interview-session-type">Panel Interview · Full Session</div>
+            <div class="interview-session-date">Yesterday · 38 min</div>
+          </div>
+          <div class="interview-session-score">82</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MOCK INTERVIEW — ACTIVE SESSION -->
+  <div class="screen" id="screen-interview-active">
+    <div class="interview-session-wrap">
+      <div class="interview-header">
+        <div class="interview-header__left">
+          <div class="interview-header__type" id="interviewType">MMI · Station 1 of 6</div>
+          <div class="interview-header__topic" id="interviewTopic">Medical Ethics</div>
+        </div>
+        <div class="interview-header__right">
+          <div class="interview-timer" id="interviewTimer">8:00</div>
+          <button class="interview-end-btn" id="endInterviewBtn">End Session</button>
+        </div>
+      </div>
+
+      <div class="interview-main">
+        <!-- AI Interviewer side -->
+        <div class="interviewer-panel">
+          <div class="interviewer-avatar-wrap">
+            <div class="interviewer-avatar-ring"></div>
+            <div class="interviewer-avatar" id="interviewerAvatar">
+              <div class="interviewer-avatar__initials">AI</div>
+            </div>
+            <div class="interviewer-sound-bars" id="soundBars">
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+          <div class="interviewer-name">Dr. Reyes · AI Interviewer</div>
+          <div class="interview-question-box" id="interviewQuestionBox">
+            <div class="interview-question-label">Question</div>
+            <p id="interviewQuestion">A patient with capacity refuses a recommended blood transfusion for religious reasons. As the treating physician, how do you proceed?</p>
+          </div>
+          <div class="interview-think-time" id="thinkTimeBox">
+            <div class="interview-think-label">Preparation Time</div>
+            <div class="interview-think-timer" id="thinkTimer">2:00</div>
+          </div>
+        </div>
+
+        <!-- Candidate side -->
+        <div class="candidate-panel">
+          <div class="candidate-panel__header">
+            <div class="candidate-status" id="candidateStatus">
+              <span class="candidate-status-dot"></span>
+              Ready to respond
+            </div>
+            <button class="mic-btn" id="micBtn">
+              <span class="mic-icon">◎</span>
+              Start Speaking
+            </button>
+          </div>
+          <div class="candidate-transcript" id="candidateTranscript">
+            <p class="transcript-placeholder">Your response will appear here as you speak...</p>
+          </div>
+          <div class="live-feedback" id="liveFeedback">
+            <div class="live-feedback__header">Live Feedback</div>
+          </div>
+          <div class="interview-actions">
+            <button class="interview-action-btn" id="nextStationBtn">Next Station →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AI TUTOR -->
+  <div class="screen" id="screen-tutor">
+    <div class="tutor-wrap">
+      <div class="tutor-header">
+        <div class="tutor-header__title">AI Tutor</div>
+        <div class="tutor-header__sub">Ask anything — MCAT, interviews, med school strategy</div>
+      </div>
+      <div class="tutor-messages" id="tutorMessages">
+        <div class="tutor-msg tutor-msg--ai">
+          <div class="tutor-msg__avatar">A</div>
+          <div class="tutor-msg__bubble">Hello. I'm your ACUITY AI tutor. I can help you understand difficult MCAT concepts, work through practice problems, or prepare for your medical school interviews. What would you like to work on today?</div>
+        </div>
+      </div>
+      <div class="tutor-suggestions" id="tutorSuggestions">
+        <button class="tutor-suggest">Explain oxidative phosphorylation</button>
+        <button class="tutor-suggest">How do I answer ethics MMI questions?</button>
+        <button class="tutor-suggest">CARS strategies for tight timing</button>
+      </div>
+      <div class="tutor-input-row">
+        <input type="text" class="tutor-input" id="tutorInput" placeholder="Ask a question..." />
+        <button class="tutor-send" id="tutorSend">→</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOTTOM NAV -->
+  <nav class="bottom-nav" id="bottomNav">
+    <button class="nav-item active" data-screen="home">
+      <span class="nav-item__icon">⌂</span>
+      <span class="nav-item__label">Home</span>
+    </button>
+    <button class="nav-item" data-screen="mcat">
+      <span class="nav-item__icon">◎</span>
+      <span class="nav-item__label">MCAT</span>
+    </button>
+    <button class="nav-item nav-item--featured" data-screen="interview-hub">
+      <span class="nav-item__icon">◉</span>
+      <span class="nav-item__label">Interview</span>
+    </button>
+    <button class="nav-item" data-screen="tutor">
+      <span class="nav-item__icon">△</span>
+      <span class="nav-item__label">Tutor</span>
+    </button>
+  </nav>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+  <script src="app.js?v=3"></script>
+</body>
+</html>

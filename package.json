@@ -1,0 +1,9 @@
+{
+  "name": "acuity",
+  "version": "1.0.0",
+  "description": "ACUITY — AI-powered MCAT prep and medical school interview simulation",
+  "private": true,
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.37.0"
+  }
+}
