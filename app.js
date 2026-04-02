@@ -967,6 +967,15 @@ function showToast(msg, duration = 2800) {
   toastTimer = setTimeout(() => toast.classList.remove('show'), duration);
 }
 
+// ─── SERVICE WORKER ──────────────────────────────────────────────────────────
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+      .then(reg => console.log('SW registered:', reg.scope))
+      .catch(err => console.warn('SW registration failed:', err));
+  });
+}
+
 // ─── INIT ────────────────────────────────────────────────────────────────────
 (function init() {
   const savedUser = localStorage.getItem('acuity_user');
